@@ -1,15 +1,21 @@
+import java.time.LocalDate;
+import java.time.Month;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        AgendaEventos agendaEventos = new AgendaEventos();
+        //localDate.of (coloca a data) e por fora coloca o evento.
+        agendaEventos.adicionarEvento(LocalDate.of(2025, Month.JULY, 15), "Evento 01", "Atração 01");
+        agendaEventos.adicionarEvento(LocalDate.of(2025, 7, 9), "Evento 02", "Atração 02");
+        agendaEventos.adicionarEvento(LocalDate.of(2024, Month.JANUARY, 10), "Evento 03", "Atração 03");
+        //agendaEventos.adicionarEvento(LocalDate.of(2025, Month.JUNE, 2), "Evento 04", "Atração 04");
+        //agendaEventos.adicionarEvento(LocalDate.of(2025, Month.JUNE, 3), "Evento 05", "Atração 05");
+        agendaEventos.adicionarEvento(LocalDate.of(2026, Month.SEPTEMBER, 20), "Evento 06", "Atração 06");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        agendaEventos.exibirAgenda();
+
+        agendaEventos.obterProximoEvento();
     }
 }
